@@ -20,7 +20,7 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<TemplateResponse> callTemplate(TemplateRequest request) async {
     return _post<TemplateResponse>(
-      endpoint: ApiConstants.template,
+      endpoint: ApiConstants.getToken,
       body: request.toJson(),
       fromJson: (json) => TemplateResponse.fromJson(json),
     );
