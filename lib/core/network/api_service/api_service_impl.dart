@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import '../base_response/api_response.dart';
+import '../../../modules/template/data/models/requests/template_request.dart';
+import '../../../modules/template/data/models/responses/template_response.dart';
 import '../error/app_exception.dart';
 import '../error/dio_exception.dart';
 import '../error/dio_exception_mapper.dart';
@@ -19,7 +20,7 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<TemplateResponse> callTemplate(TemplateRequest request) async {
     return _post<TemplateResponse>(
-      endpoint: ApiConstants.template_call,
+      endpoint: ApiConstants.template,
       body: request.toJson(),
       fromJson: (json) => TemplateResponse.fromJson(json),
     );
